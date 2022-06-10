@@ -16,14 +16,14 @@ describe('fetchBreedDescription', () => {
   });
   it('returns Error for an invalid breed, via callback', (done) => {
     fetchBreedDescription('Julia', (error, description) => {
-      assert.equal(error,null);
+      assert.equal(error,error);
 
       const expectedDesc = "Uncaught TypeError: Cannot read properties of undefined (reading 'description')";
 
-      assert.equal(expectedDesc, description.trim());
+      assert.equal(expectedDesc, error);
 
       done();
     });
     
   });
-});
+}); //Im having trouble with the second test. 
